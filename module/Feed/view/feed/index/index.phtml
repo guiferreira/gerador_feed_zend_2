@@ -1,0 +1,29 @@
+<div class="jumbotron">
+    <h1><?php echo sprintf($this->translate('Bem vindo ao gerador de %sFeed%s'), '<span class="zf-green">', '</span>') ?></h1>
+    <p><?php echo sprintf($this->translate('Esse é um exemplo de uma gerador de Feed com Zend Framework 2'), '<a href="https://github.com/zendframework/ZendSkeletonApplication" target="_blank">', '</a>', \Zend\Version\Version::VERSION) ?></p>
+    <p><a class="btn btn-success btn-lg" href="https://guiferreiracode.com" target="_blank"><?php echo $this->translate('Veja aqui meu blog') ?> &raquo;</a></p>
+</div>
+
+<div class="row">
+
+    <?php foreach ($this->rss['item'] as $key => $value) { ?>
+
+        
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><?php echo $this->translate($value['title']); ?></h3>
+                </div>
+                <div class="panel-body">
+                    <p><?php echo sprintf($this->translate($value['description'])); ?></p>
+                    <p><a class="btn btn-success pull-right" href="<?php echo $value['link']; ?>" target="_blank"><?php echo $this->translate('Ver mais'); ?> &raquo;</a></p>
+                </div>
+            </div>
+        </div>
+
+       
+    <?php } ?>
+
+    
+</div>
